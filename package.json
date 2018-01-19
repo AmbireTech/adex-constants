@@ -1,0 +1,22 @@
+{
+  "name": "adex-constants",
+  "version": "1.0.0",
+  "description": "Common constants for AdEx network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdExBlockchain/adex-constants.git"
+  },
+  "keywords": [
+    "adex"
+  ],
+  "author": "AdEx Network",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdExBlockchain/adex-constants/issues"
+  },
+  "homepage": "https://github.com/AdExBlockchain/adex-constants#readme"
+}
