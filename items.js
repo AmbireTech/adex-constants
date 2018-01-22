@@ -1,32 +1,24 @@
 const ItemsTypes = {
-    AdUnit: { id: 0, name: 'AdUnit' },
-    AdSlot: { id: 1, name: 'AdSlot' },
-    Campaign: { id: 2, name: 'Campaign' },
-    Channel: { id: 3, name: 'Channel' }
+    AdUnit: { id: 0, name: 'AdUnit', ipfs: true, type: 'items' },
+    AdSlot: { id: 1, name: 'AdSlot', ipfs: true, type: 'items' },
+    Campaign: { id: 2, name: 'Campaign', ipfs: false, type: 'collection' },
+    Channel: { id: 3, name: 'Channel', ipfs: false, type: 'collection' }
 }
 
-function getItemTypesNames() {
-    let names = {}
+function getItemTypePropById(prop) {
+    let props = {}
     Object.keys(ItemsTypes).map((key) => {
         let type = ItemsTypes[key]
-        names[type.id] = type.name
+        props[type.id] = type[prop]
     })
 
-    return names
+    return props
 }
 
-function itemsModelsById() {
-    let types = {}
-    Object.keys(ItemsTypes).map((key) => {
-        let type = ItemsTypes[key]
-        types[type.id] = type.model
-    })
-
-    return types
-}
-
-const ItemTypesNames = getItemTypesNames()
-const ItemModelsByType = itemsModelsById()
+const ItemTypesNames = getItemTypePropById('name')
+const ItemModelsByType = getItemTypePropById('model') //TODO:
+const ItemIpfsByTypeId = getItemTypePropById('ipfs')
+const ItemTypeByTypeId = getItemTypePropById('type')
 
 const AdSizes = [
     { valueTxt: '300x250', label: '300 x 250 px', value: '1' },
@@ -52,5 +44,7 @@ module.exports = {
     AdTypes: AdTypes,
     ItemsTypes: ItemsTypes,
     ItemTypesNames: ItemTypesNames,
-    ItemModelsByType: ItemModelsByType
+    ItemModelsByType: ItemModelsByType,
+    ItemIpfsByTypeId: ItemIpfsByTypeId,
+    ItemTypeByTypeId: ItemTypeByTypeId
 }
