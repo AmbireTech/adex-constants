@@ -1,3 +1,5 @@
+const objPropsById = require('./helper').objPropsById
+
 const ItemsTypes = {
     AdUnit: { id: 0, name: 'AdUnit', ipfs: true, type: 'items' },
     AdSlot: { id: 1, name: 'AdSlot', ipfs: true, type: 'items' },
@@ -15,10 +17,10 @@ function getItemTypePropById(prop) {
     return props
 }
 
-const ItemTypesNames = getItemTypePropById('name')
-const ItemModelsByType = getItemTypePropById('model') //TODO:
-const ItemIpfsByTypeId = getItemTypePropById('ipfs')
-const ItemTypeByTypeId = getItemTypePropById('type')
+const ItemTypesNames = objPropsById(ItemsTypes, 'name')
+const ItemModelsByType = objPropsById(ItemsTypes, 'model') //TODO:
+const ItemIpfsByTypeId = objPropsById(ItemsTypes, 'ipfs')
+const ItemTypeByTypeId = objPropsById(ItemsTypes, 'type')
 
 const AdSizes = [
     { valueTxt: '300x250', label: '300 x 250 px', value: '1' },
