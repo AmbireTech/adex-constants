@@ -41,6 +41,9 @@ const AdTypes = [
     { valueTxt: 'ios', label: 'iOS', value: '3' },
 ]
 
+const AdSizesByValue = mapArrayByProp(AdSizes, 'value')
+const AdTypesByValue = mapArrayByProp(AdTypes, 'value')
+
 // TARGETS
 const TargetsWeight = [
     { value: 0, label: 'None' },
@@ -90,6 +93,8 @@ const Locations = allLocations
 module.exports = {
     AdSizes: AdSizes,
     AdTypes: AdTypes,
+    AdSizesByValue: AdSizesByValue,
+    AdTypesByValue: AdTypesByValue,
     ItemsTypes: ItemsTypes,
     ItemTypesNames: ItemTypesNames,
     ItemIpfsByTypeId: ItemIpfsByTypeId,
