@@ -1,3 +1,4 @@
+const countryData = require('country-data')
 const { objPropsById, mapArrayByProp } = require('./helper')
 
 const ItemsTypes = {
@@ -62,6 +63,30 @@ const DefaultTargets = [
     { name: 'age', value: { from: TARGET_MIN_AGE, to: TARGET_MAX_AGE }, weight: DefaultTargetWeightValue }
 ]
 
+const Genders = [
+    { value: 'female', label: 'Female' },
+    { value: 'male', label: 'Male' },
+    { value: 'other', label: 'Other' }
+]
+
+let allCountries = countryData.countries.all.map((cnt) => {
+    return {
+        value: cnt.alpha2,
+        label: cnt.name
+    }
+})
+
+let allRegions = Object.keys(countryData.regions).map((key) => {
+    return {
+        value: key,
+        label: countryData.regions[key].name
+    }
+})
+
+let allLocations = allRegions.concat(allCountries)
+
+const Locations = allLocations
+
 module.exports = {
     AdSizes: AdSizes,
     AdTypes: AdTypes,
@@ -73,5 +98,7 @@ module.exports = {
     TargetWeightLabels: TargetWeightLabels,
     TARGET_MIN_AGE: TARGET_MIN_AGE,
     TARGET_MAX_AGE: TARGET_MAX_AGE,
-    DefaultTargets: DefaultTargets
+    DefaultTargets: DefaultTargets,
+    Genders: Genders,
+    Locations: Locations
 }
