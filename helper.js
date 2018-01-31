@@ -15,7 +15,7 @@ function objPropsById(obj, propName) {
 
 function mapArrayByProp(arr, key){
     let byKey = arr.reduce((memo, prop, index) => {
-        memo[arr[key]] = prop
+        memo[prop[key]] = prop
         return memo
     }, {})
 
