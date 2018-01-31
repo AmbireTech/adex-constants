@@ -1,4 +1,4 @@
-const objPropsById = require('./helper').objPropsById
+const { objPropsById, mapArrayByProp } = require('./helper')
 
 const ItemsTypes = {
     AdUnit: { id: 0, name: 'AdUnit', ipfs: true, type: 'items' },
@@ -18,7 +18,6 @@ function getItemTypePropById(prop) {
 }
 
 const ItemTypesNames = objPropsById(ItemsTypes, 'name')
-const ItemModelsByType = objPropsById(ItemsTypes, 'model') //TODO:
 const ItemIpfsByTypeId = objPropsById(ItemsTypes, 'ipfs')
 const ItemTypeByTypeId = objPropsById(ItemsTypes, 'type')
 
@@ -41,12 +40,38 @@ const AdTypes = [
     { valueTxt: 'ios', label: 'iOS', value: '3' },
 ]
 
+// TARGETS
+const TargetsWeight = [
+    { value: 0, label: 'None' },
+    { value: 1, label: 'Low' },
+    { value: 2, label: 'Medium' },
+    { value: 3, label: 'High' },
+    { value: 4, label: 'Highest' },
+]
+
+const DefaultTargetWeightValue = TargetsWeight[0].value
+
+const TargetWeightLabels = mapArrayByProp(TargetsWeight, 'value')
+
+const TARGET_MIN_AGE = 0
+const TARGET_MAX_AGE = 100
+
+const DefaultTargets = [
+    { name: 'gender', value: [], weight: DefaultTargetWeightValue },
+    { name: 'location', value: [], weight: DefaultTargetWeightValue },
+    { name: 'age', value: { from: TARGET_MIN_AGE, to: TARGET_MAX_AGE }, weight: DefaultTargetWeightValue }
+]
+
 module.exports = {
     AdSizes: AdSizes,
     AdTypes: AdTypes,
     ItemsTypes: ItemsTypes,
     ItemTypesNames: ItemTypesNames,
-    ItemModelsByType: ItemModelsByType,
     ItemIpfsByTypeId: ItemIpfsByTypeId,
-    ItemTypeByTypeId: ItemTypeByTypeId
+    ItemTypeByTypeId: ItemTypeByTypeId,
+    TargetsWeight: TargetsWeight,
+    TargetWeightLabels: TargetWeightLabels,
+    TARGET_MIN_AGE: TARGET_MIN_AGE,
+    TARGET_MAX_AGE: TARGET_MAX_AGE,
+    DefaultTargets: DefaultTargets
 }

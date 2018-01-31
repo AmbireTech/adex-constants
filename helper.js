@@ -13,6 +13,15 @@ function objPropsById(obj, propName) {
     return props
 }
 
+function mapArrayByProp(arr, key){
+    let byKey = arr.reduce((memo, prop, index) => {
+        memo[arr[key]] = prop
+        return memo
+    }, {})
+
+    return byKey
+}
+
 function toMilliseconds({ days = 0, hours = 0, minutes = 0, seconds = 0 }) {
     let daysMs = days * HOURS * MINUTES * SECONDS * MILLISECONDS
     let hoursMs = hours * MINUTES * SECONDS * MILLISECONDS
@@ -26,5 +35,6 @@ function toMilliseconds({ days = 0, hours = 0, minutes = 0, seconds = 0 }) {
 
 module.exports = {
     objPropsById: objPropsById,
-    toMilliseconds: toMilliseconds
+    toMilliseconds: toMilliseconds,
+    mapArrayByProp: mapArrayByProp
 }

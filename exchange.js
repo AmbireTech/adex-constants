@@ -1,4 +1,4 @@
-const { objPropsById, toMilliseconds } = require('./helper')
+const { objPropsById, toMilliseconds, mapArrayByProp } = require('./helper')
 
 const BID_STATES = {
     DoesNotExist: { id: 0, value: 'DoesNotExist', label: 'BID_STATE_DOES_NOT_EXIST' },
@@ -25,16 +25,7 @@ const TIMEOUTS = [
     { value: toMilliseconds({ days: 90 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [90] }
 ]
 
-function tmosByValue() {
-    let byValue = TIMEOUTS.reduce((memo, tmo, index) => {
-        memo[tmo.value] = tmo
-        return memo
-    }, {})
-
-    return byValue
-}
-
-const timeoutsByValue = tmosByValue()
+const timeoutsByValue = mapArrayByProp(TIMEOUTS, 'value')
 
 module.exports = {
     BID_STATES: BID_STATES,
