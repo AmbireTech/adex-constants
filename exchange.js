@@ -11,6 +11,7 @@ const BID_STATES = {
 const BidStatesValues = objPropsById(BID_STATES, 'value')
 const BidStatesLabels = objPropsById(BID_STATES, 'label')
 
+// TODO: test toMilliseconds or use momentjs
 const TIMEOUTS = [
     { value: toMilliseconds({ minutes: 30 }), label: 'BID_TIMEOUT_MINUTES', labelArgs: [30] },
     { value: toMilliseconds({ hours: 1 }), label: 'BID_TIMEOUT_HOUR', labelArgs: [1] },
@@ -27,10 +28,22 @@ const TIMEOUTS = [
 
 const timeoutsByValue = mapArrayByProp(TIMEOUTS, 'value')
 
+const SIGN_TYPES = {
+    Eip: { id: 0, value: 'Eip', label: 'SIGN_TYPES_EIP' },
+    Personal: { id: 1, value: 'Personal', label: 'SIGN_TYPES_PRSONAL' },
+    Trezor: { id: 2, value: 'Trezor', label: 'SIGN_TYPES_TREZOR' }
+}
+
+const SignTypesValues = objPropsById(SIGN_TYPES, 'value')
+const SignTypesLabels = objPropsById(SIGN_TYPES, 'label')
+
 module.exports = {
     BID_STATES: BID_STATES,
     BidStatesValues: BidStatesValues,
     BidStatesLabels: BidStatesLabels,
     TIMEOUTS: TIMEOUTS,
-    timeoutsByValue: timeoutsByValue
+    timeoutsByValue: timeoutsByValue,
+    SIGN_TYPES: SIGN_TYPES,
+    SignTypesValues: SignTypesValues,
+    SignTypesLabels: SignTypesLabels
 }
