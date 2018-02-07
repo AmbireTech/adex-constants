@@ -29,9 +29,10 @@ const TIMEOUTS = [
 const timeoutsByValue = mapArrayByProp(TIMEOUTS, 'value')
 
 const SIGN_TYPES = {
-    Eip: { id: 0, value: 'Eip', label: 'SIGN_TYPES_EIP' },
-    Personal: { id: 1, value: 'Personal', label: 'SIGN_TYPES_PRSONAL' },
-    Trezor: { id: 2, value: 'Trezor', label: 'SIGN_TYPES_TREZOR' }
+    Personal: { id: 0, value: 'Personal', label: 'SIGN_TYPES_PRSONAL' },
+    MetamaskTyped: { id: 1, value: 'MetamaskTyped', label: 'SIGN_TYPES_METAMASK_TYPED' },
+    Trezor: { id: 2, value: 'Trezor', label: 'SIGN_TYPES_TREZOR' },
+    Ledger: { id: 3, value: 'Ledger', label: 'SIGN_TYPES_LEDGER' }
 }
 
 const SignTypesValues = objPropsById(SIGN_TYPES, 'value')
