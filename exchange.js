@@ -11,19 +11,28 @@ const BID_STATES = {
 const BidStatesValues = objPropsById(BID_STATES, 'value')
 const BidStatesLabels = objPropsById(BID_STATES, 'label')
 
-// TODO: test toMilliseconds or use momentjs
+/*
+* TODO: test toMilliseconds or use momentjs
+* NOTE: time in second because in solidity time units are in seconds 
+* The UI should consider this when displays the data
+* TODO: Set proper timeouts, maybe add months (Max timeout 365 days)
+*/
 const TIMEOUTS = [
-    { value: toMilliseconds({ minutes: 30 }), label: 'BID_TIMEOUT_MINUTES', labelArgs: [30] },
-    { value: toMilliseconds({ hours: 1 }), label: 'BID_TIMEOUT_HOUR', labelArgs: [1] },
-    { value: toMilliseconds({ hours: 6 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [6] },
-    { value: toMilliseconds({ hours: 12 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [12] },
-    { value: toMilliseconds({ hours: 24 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [24] },
-    { value: toMilliseconds({ hours: 48 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [48] },
-    { value: toMilliseconds({ days: 3 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [3] },
-    { value: toMilliseconds({ days: 7 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [7] },
-    { value: toMilliseconds({ days: 14 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [14] },
-    { value: toMilliseconds({ days: 30 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [30] },
-    { value: toMilliseconds({ days: 90 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [90] }
+    // { value: toSeconds({ minutes: 30 }), label: 'BID_TIMEOUT_MINUTES', labelArgs: [30] },
+    // { value: toSeconds({ hours: 1 }), label: 'BID_TIMEOUT_HOUR', labelArgs: [1] },
+    // { value: toSeconds({ hours: 6 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [6] },
+    // { value: toSeconds({ hours: 12 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [12] },
+    { value: toSeconds({ hours: 24 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [24] },
+    { value: toSeconds({ hours: 48 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [48] },
+    { value: toSeconds({ days: 3 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [3] },
+    { value: toSeconds({ days: 7 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [7] },
+    { value: toSeconds({ days: 14 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [14] },
+    { value: toSeconds({ days: 30 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [30] },
+    { value: toSeconds({ days: 90 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [90] },
+    { value: toSeconds({ days: 120 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [120] },
+    { value: toSeconds({ days: 180 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [180] },
+    { value: toSeconds({ days: 240 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [240] },
+    { value: toSeconds({ days: 365 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [365] },
 ]
 
 const timeoutsByValue = mapArrayByProp(TIMEOUTS, 'value')
