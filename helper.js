@@ -13,7 +13,7 @@ function objPropsById(obj, propName) {
     return props
 }
 
-function mapArrayByProp(arr, key){
+function mapArrayByProp(arr, key) {
     let byKey = arr.reduce((memo, prop, index) => {
         memo[prop[key]] = prop
         return memo
@@ -22,13 +22,19 @@ function mapArrayByProp(arr, key){
     return byKey
 }
 
-function toMilliseconds({ days = 0, hours = 0, minutes = 0, seconds = 0 }) {
-    let daysMs = days * HOURS * MINUTES * SECONDS * MILLISECONDS
-    let hoursMs = hours * MINUTES * SECONDS * MILLISECONDS
-    let minutesMs = minutes * SECONDS * MILLISECONDS
-    let secondsMS = seconds * MILLISECONDS
+function toSeconds({ days = 0, hours = 0, minutes = 0, seconds = 0 }) {
+    let daysS = days * HOURS * MINUTES * SECONDS
+    let hoursS = hours * MINUTES * SECONDS
+    let minutesS = minutes * SECONDS
+    let secondsS = seconds
 
-    let totalMs = daysMs + hoursMs + minutesMs + secondsMS
+    let totalS = daysS + hoursS + minutesS + secondsS
+
+    return totalS
+}
+
+function toMilliseconds({ days = 0, hours = 0, minutes = 0, seconds = 0 }) {
+    let totalMs = toSeconds({ days, hours, minutes, seconds }) * MILLISECONDS
 
     return totalMs
 }
