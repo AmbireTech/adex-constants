@@ -42,5 +42,6 @@ function toMilliseconds({ days = 0, hours = 0, minutes = 0, seconds = 0 }) {
 module.exports = {
     objPropsById: objPropsById,
     toMilliseconds: toMilliseconds,
-    mapArrayByProp: mapArrayByProp
+    mapArrayByProp: mapArrayByProp,
+    toSeconds: toSeconds
 }
