@@ -1,4 +1,4 @@
-const { objPropsById, toMilliseconds, mapArrayByProp } = require('./helper')
+const { objPropsById, toSeconds, mapArrayByProp } = require('./helper')
 
 const BID_STATES = {
     DoesNotExist: { id: 0, value: 'DoesNotExist', label: 'BID_STATE_DOES_NOT_EXIST' },
