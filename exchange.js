@@ -1,15 +1,16 @@
 const { objPropsById, toSeconds, mapArrayByProp } = require('./helper')
 
 const BID_STATES = {
-    DoesNotExist: { id: 0, value: 'DoesNotExist', label: 'BID_STATE_DOES_NOT_EXIST' },
-    Accepted: { id: 1, value: 'Accepted', label: 'BID_STATE_ACCEPTED' },
-    Canceled: { id: 2, value: 'Canceled', label: 'BID_STATE_CANCELED' },
-    Expired: { id: 3, value: 'Expired', label: 'BID_STATE_EXPIRED' },
-    Completed: { id: 4, value: 'Completed', label: 'BID_STATE_COMPLETED' }
+    DoesNotExist: { id: 0, value: 'DoesNotExist', eventName: 'NoEvent', label: 'BID_STATE_DOES_NOT_EXIST' },
+    Accepted: { id: 1, value: 'Accepted', eventName: 'LogBidAccepted', label: 'BID_STATE_ACCEPTED' },
+    Canceled: { id: 2, value: 'Canceled', eventName: 'LogBidCanceled', label: 'BID_STATE_CANCELED' },
+    Expired: { id: 3, value: 'Expired', eventName: 'LogBidExpired', label: 'BID_STATE_EXPIRED' },
+    Completed: { id: 4, value: 'Completed', eventName: 'LogBidCompleted', label: 'BID_STATE_COMPLETED' }
 }
 
 const BidStatesValues = objPropsById(BID_STATES, 'value')
 const BidStatesLabels = objPropsById(BID_STATES, 'label')
+const BidStatesEventNames = objPropsById(BID_STATES, 'eventName')
 
 /*
 * TODO: test toMilliseconds or use momentjs
@@ -50,6 +51,7 @@ module.exports = {
     BID_STATES: BID_STATES,
     BidStatesValues: BidStatesValues,
     BidStatesLabels: BidStatesLabels,
+    BidStatesEventNames: BidStatesEventNames,
     TIMEOUTS: TIMEOUTS,
     timeoutsByValue: timeoutsByValue,
     SIGN_TYPES: SIGN_TYPES,
