@@ -23,16 +23,16 @@ const ItemIpfsByTypeId = objPropsById(ItemsTypes, 'ipfs')
 const ItemTypeByTypeId = objPropsById(ItemsTypes, 'type')
 
 const AdSizes = [
-    { valueTxt: '300x250', label: '300 x 250 px', value: '1' },
-    { valueTxt: '728x90', label: '728 x 90 px', value: '2' },
-    { valueTxt: '160x600', label: '160 x 600 px', value: '3' },
-    { valueTxt: '468x60', label: '468 x 60 px', value: '4' },
-    { valueTxt: '120x600', label: '120 x 600 px', value: '5' },
-    { valueTxt: '300x100', label: '300 x 100 px', value: '6' },
-    { valueTxt: '88x31', label: '88 x 31 px', value: '7' },
-    { valueTxt: '300x600', label: '300 x 600 px', value: '8' },
-    { valueTxt: '336x280', label: '336 x 280 px', value: '9' },
-    { valueTxt: '320x50', label: '320 x 50 px', value: '10' },
+    { width: 300, height: 250, valueTxt: '300x250', label: '300 x 250 px', value: '1' },
+    { width: 728, height: 90, valueTxt: '728x90', label: '728 x 90 px', value: '2' },
+    { width: 160, height: 600, valueTxt: '160x600', label: '160 x 600 px', value: '3' },
+    { width: 468, height: 60, valueTxt: '468x60', label: '468 x 60 px', value: '4' },
+    { width: 120, height: 600, valueTxt: '120x600', label: '120 x 600 px', value: '5' },
+    { width: 300, height: 100, valueTxt: '300x100', label: '300 x 100 px', value: '6' },
+    { width: 88, height: 31, valueTxt: '88x31', label: '88 x 31 px', value: '7' },
+    { width: 300, height: 600, valueTxt: '300x600', label: '300 x 600 px', value: '8' },
+    { width: 336, height: 280, valueTxt: '336x280', label: '336 x 280 px', value: '9' },
+    { width: 320, height: 50, valueTxt: '320x50', label: '320 x 50 px', value: '10' },
 ]
 
 const AdTypes = [
