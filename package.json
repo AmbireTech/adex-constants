@@ -1,6 +1,6 @@
 {
   "name": "adex-constants",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Common constants for AdEx network",
   "main": "./dist/index.js",
   "scripts": {
