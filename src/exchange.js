@@ -5,7 +5,11 @@ const BID_STATES = {
     Accepted: { id: 1, value: 'Accepted', eventName: 'LogBidAccepted', label: 'BID_STATE_ACCEPTED' },
     Canceled: { id: 2, value: 'Canceled', eventName: 'LogBidCanceled', label: 'BID_STATE_CANCELED' },
     Expired: { id: 3, value: 'Expired', eventName: 'LogBidExpired', label: 'BID_STATE_EXPIRED' },
-    Completed: { id: 4, value: 'Completed', eventName: 'LogBidCompleted', label: 'BID_STATE_COMPLETED' }
+    Completed: { id: 4, value: 'Completed', eventName: 'LogBidCompleted', label: 'BID_STATE_COMPLETED' },
+
+    // NOTE: Not smart contracts states used for pending transactions check in the dapp
+    Completed: { id: 10, value: 'ConfirmedByAdvertiser', eventName: 'LogBidConfirmed', label: 'BID_STATE_COMPLETED' },
+    Completed: { id: 11, value: 'ConfirmedByPublisher', eventName: 'LogBidConfirmed', label: 'BID_STATE_COMPLETED' }
 }
 
 const BidStatesValues = objPropsById(BID_STATES, 'value')
@@ -19,7 +23,7 @@ const BidStatesEventNames = objPropsById(BID_STATES, 'eventName')
 * TODO: Set proper timeouts, maybe add months (Max timeout 365 days)
 */
 const TIMEOUTS = [
-    // { value: toSeconds({ minutes: 30 }), label: 'BID_TIMEOUT_MINUTES', labelArgs: [30] },
+    { value: toSeconds({ minutes: 30 }), label: 'BID_TIMEOUT_MINUTES', labelArgs: [30] }, 
     // { value: toSeconds({ hours: 1 }), label: 'BID_TIMEOUT_HOUR', labelArgs: [1] },
     // { value: toSeconds({ hours: 6 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [6] },
     // { value: toSeconds({ hours: 12 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [12] },
@@ -47,6 +51,15 @@ const SIGN_TYPES = {
 const SignTypesValues = objPropsById(SIGN_TYPES, 'value')
 const SignTypesLabels = objPropsById(SIGN_TYPES, 'label')
 
+const TX_STATUS = {
+    Pending: { id: 0, value: 'Pending', label: 'TRANSACTION_STATUS_PENDING' },
+    Success: { id: 1, value: 'Success', label: 'TRANSACTION_STATUS_SUCCESS' },
+    Error: { id: 2, value: 'Error', label: 'TRANSACTION_STATUS_ERROR' },
+}
+
+const TxStatusValues = objPropsById(BID_STATES, 'value')
+const TxStatLabels = objPropsById(BID_STATES, 'label')
+
 module.exports = {
     BID_STATES: BID_STATES,
     BidStatesValues: BidStatesValues,
@@ -56,5 +69,8 @@ module.exports = {
     timeoutsByValue: timeoutsByValue,
     SIGN_TYPES: SIGN_TYPES,
     SignTypesValues: SignTypesValues,
-    SignTypesLabels: SignTypesLabels
+    SignTypesLabels: SignTypesLabels,
+    TX_STATUS: TX_STATUS,
+    TxStatusValues: TxStatusValues,
+    TxStatLabels: TxStatLabels
 }
