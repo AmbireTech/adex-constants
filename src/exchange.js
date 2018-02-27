@@ -7,9 +7,9 @@ const BID_STATES = {
     Expired: { id: 3, value: 'Expired', eventName: 'LogBidExpired', label: 'BID_STATE_EXPIRED' },
     Completed: { id: 4, value: 'Completed', eventName: 'LogBidCompleted', label: 'BID_STATE_COMPLETED' },
 
-    // NOTE: Not smart contracts states used for pending transactions check in the dapp
-    Completed: { id: 10, value: 'ConfirmedByAdvertiser', eventName: 'LogBidConfirmed', label: 'BID_STATE_COMPLETED' },
-    Completed: { id: 11, value: 'ConfirmedByPublisher', eventName: 'LogBidConfirmed', label: 'BID_STATE_COMPLETED' }
+    // NOTE: Not smart contracts states used for pending transactions check in the dapp/node
+    ConfirmedAdv: { id: 10, value: 'ConfirmedByAdvertiser', eventName: 'LogBidConfirmed', label: 'BID_STATE_COMPLETED' },
+    ConfirmedPub: { id: 11, value: 'ConfirmedByPublisher', eventName: 'LogBidConfirmed', label: 'BID_STATE_COMPLETED' }
 }
 
 const BidStatesValues = objPropsById(BID_STATES, 'value')
