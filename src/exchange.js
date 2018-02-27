@@ -57,8 +57,8 @@ const TX_STATUS = {
     Error: { id: 2, value: 'Error', label: 'TRANSACTION_STATUS_ERROR' },
 }
 
-const TxStatusValues = objPropsById(BID_STATES, 'value')
-const TxStatLabels = objPropsById(BID_STATES, 'label')
+const TxStatusValues = objPropsById(TX_STATUS, 'value')
+const TxStatusLabels = objPropsById(TX_STATUS, 'label')
 
 module.exports = {
     BID_STATES: BID_STATES,
@@ -72,5 +72,5 @@ module.exports = {
     SignTypesLabels: SignTypesLabels,
     TX_STATUS: TX_STATUS,
     TxStatusValues: TxStatusValues,
-    TxStatLabels: TxStatLabels
+    TxStatusLabels: TxStatusLabels
 }
