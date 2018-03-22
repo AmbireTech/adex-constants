@@ -22,17 +22,18 @@ const ItemTypesNames = objPropsById(ItemsTypes, 'name')
 const ItemIpfsByTypeId = objPropsById(ItemsTypes, 'ipfs')
 const ItemTypeByTypeId = objPropsById(ItemsTypes, 'type')
 
+// TODO: Use width and height for labelArgs
 const AdSizes = [
-    { width: 300, height: 250, valueTxt: '300x250', label: '300 x 250 px', value: '1' },
-    { width: 728, height: 90, valueTxt: '728x90', label: '728 x 90 px', value: '2' },
-    { width: 160, height: 600, valueTxt: '160x600', label: '160 x 600 px', value: '3' },
-    { width: 468, height: 60, valueTxt: '468x60', label: '468 x 60 px', value: '4' },
-    { width: 120, height: 600, valueTxt: '120x600', label: '120 x 600 px', value: '5' },
-    { width: 300, height: 100, valueTxt: '300x100', label: '300 x 100 px', value: '6' },
-    { width: 88, height: 31, valueTxt: '88x31', label: '88 x 31 px', value: '7' },
-    { width: 300, height: 600, valueTxt: '300x600', label: '300 x 600 px', value: '8' },
-    { width: 336, height: 280, valueTxt: '336x280', label: '336 x 280 px', value: '9' },
-    { width: 320, height: 50, valueTxt: '320x50', label: '320 x 50 px', value: '10' },
+    { width: 300, height: 250, valueTxt: '300x250', label: 'LABEL_SIZE_PX', labelArgs: [300, 250], value: '1' },
+    { width: 728, height: 90, valueTxt: '728x90', label: 'LABEL_SIZE_PX', labelArgs: [728, 90], value: '2' },
+    { width: 160, height: 600, valueTxt: '160x600', label: 'LABEL_SIZE_PX', labelArgs: [160, 600], value: '3' },
+    { width: 468, height: 60, valueTxt: '468x60', label: 'LABEL_SIZE_PX', labelArgs: [468, 60], value: '4' },
+    { width: 120, height: 600, valueTxt: '120x600', label: 'LABEL_SIZE_PX', labelArgs: [120, 600], value: '5' },
+    { width: 300, height: 100, valueTxt: '300x100', label: 'LABEL_SIZE_PX', labelArgs: [300, 100], value: '6' },
+    { width: 88, height: 31, valueTxt: '88x31', label: 'LABEL_SIZE_PX', labelArgs: [88, 31], value: '7' },
+    { width: 300, height: 600, valueTxt: '300x600', label: 'LABEL_SIZE_PX', labelArgs: [300, 600], value: '8' },
+    { width: 336, height: 280, valueTxt: '336x280', label: 'LABEL_SIZE_PX', labelArgs: [336, 280], value: '9' },
+    { width: 320, height: 50, valueTxt: '320x50', label: 'LABEL_SIZE_PX', labelArgs: [320, 50], value: '10' },
 ]
 
 const AdTypes = [
@@ -46,11 +47,11 @@ const AdTypesByValue = mapArrayByProp(AdTypes, 'value')
 
 // TARGETS
 const TargetsWeight = [
-    { value: 0, label: 'None' },
-    { value: 1, label: 'Low' },
-    { value: 2, label: 'Medium' },
-    { value: 3, label: 'High' },
-    { value: 4, label: 'Highest' },
+    { value: 0, label: 'LABEL_TARGET_WEIGHT_NONE' },
+    { value: 1, label: 'LABEL_TARGET_WEIGHT_LOW' },
+    { value: 2, label: 'LABEL_TARGET_WEIGHT_MEDIUM' },
+    { value: 3, label: 'LABEL_TARGET_WEIGHT_HIGH' },
+    { value: 4, label: 'LABEL_TARGET_WEIGHT_HIGHEST' },
 ]
 
 const DefaultTargetWeightValue = TargetsWeight[0].value
@@ -67,9 +68,9 @@ const DefaultTargets = [
 ]
 
 const Genders = [
-    { value: 'female', label: 'Female' },
-    { value: 'male', label: 'Male' },
-    { value: 'other', label: 'Other' }
+    { value: 'female', label: 'LABEL_GENDER_FEMALE' },
+    { value: 'male', label: 'LABEL_GENDER_MALE' },
+    { value: 'other', label: 'LABEL_GENDER_OTHER' }
 ]
 
 let allCountries = countryData.countries.all.map((cnt) => {

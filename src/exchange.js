@@ -7,9 +7,10 @@ const BID_STATES = {
     Expired: { id: 3, value: 'Expired', eventName: 'LogBidExpired', label: 'BID_STATE_EXPIRED' },
     Completed: { id: 4, value: 'Completed', eventName: 'LogBidCompleted', label: 'BID_STATE_COMPLETED' },
 
-    // NOTE: Not smart contracts states used for pending transactions check in the dapp/node
-    ConfirmedAdv: { id: 10, value: 'ConfirmedByAdvertiser', eventName: 'LogBidConfirmed', label: 'BID_STATE_COMPLETED' },
-    ConfirmedPub: { id: 11, value: 'ConfirmedByPublisher', eventName: 'LogBidConfirmed', label: 'BID_STATE_COMPLETED' }
+    // NOTE: Not smart contracts states used for pending transactions check in the dapp/node (Verified)
+    // TODO: Change from confirmed to Verified
+    ConfirmedAdv: { id: 10, value: 'ConfirmedByAdvertiser', eventName: 'LogBidConfirmed', label: 'BID_STATE_CONFIRMED_BY_ADVERTISER' },
+    ConfirmedPub: { id: 11, value: 'ConfirmedByPublisher', eventName: 'LogBidConfirmed', label: 'BID_STATE_CONFIRMED_BY_PUBLISHER' }
 }
 
 const BidStatesValues = objPropsById(BID_STATES, 'value')
@@ -23,16 +24,17 @@ const BidStatesEventNames = objPropsById(BID_STATES, 'eventName')
 * TODO: Set proper timeouts, maybe add months (Max timeout 365 days)
 */
 const TIMEOUTS = [
-    { value: toSeconds({ minutes: 30 }), label: 'BID_TIMEOUT_MINUTES', labelArgs: [30] }, 
-    // { value: toSeconds({ hours: 1 }), label: 'BID_TIMEOUT_HOUR', labelArgs: [1] },
-    // { value: toSeconds({ hours: 6 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [6] },
-    // { value: toSeconds({ hours: 12 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [12] },
+    { value: toSeconds({ minutes: 30 }), label: 'BID_TIMEOUT_MINUTES', labelArgs: [30] }, // TEMP: for testing
     { value: toSeconds({ hours: 24 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [24] },
     { value: toSeconds({ hours: 48 }), label: 'BID_TIMEOUT_HOURS', labelArgs: [48] },
     { value: toSeconds({ days: 3 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [3] },
+    { value: toSeconds({ days: 5 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [5] },
     { value: toSeconds({ days: 7 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [7] },
+    { value: toSeconds({ days: 10 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [10] },
     { value: toSeconds({ days: 14 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [14] },
     { value: toSeconds({ days: 30 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [30] },
+    { value: toSeconds({ days: 45 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [45] },
+    { value: toSeconds({ days: 60 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [60] },
     { value: toSeconds({ days: 90 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [90] },
     { value: toSeconds({ days: 120 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [120] },
     { value: toSeconds({ days: 180 }), label: 'BID_TIMEOUT_DAYS', labelArgs: [180] },
