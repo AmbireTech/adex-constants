@@ -73,6 +73,12 @@ const Genders = [
     { value: 'other', label: 'LABEL_GENDER_OTHER' }
 ]
 
+const PredefinedTags = [
+    { name: 'sports'},
+    { name: 'tech'},
+    { name: 'outdoors'}
+]
+
 let allCountries = countryData.countries.all.map((cnt) => {
     return {
         value: cnt.alpha2,
@@ -106,5 +112,6 @@ module.exports = {
     TARGET_MAX_AGE: TARGET_MAX_AGE,
     DefaultTargets: DefaultTargets,
     Genders: Genders,
-    Locations: Locations
+    Locations: Locations,
+    PredefinedTags: PredefinedTags
 }
