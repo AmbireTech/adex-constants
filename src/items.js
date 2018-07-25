@@ -108,9 +108,9 @@ module.exports = {
     TargetWeightLabels: TargetWeightLabels,
     TARGET_MIN_AGE: TARGET_MIN_AGE,
     TARGET_MAX_AGE: TARGET_MAX_AGE,
+    TAGS_MAX_LENGTH: TAGS_MAX_LENGTH,
     DefaultTargets: DefaultTargets,
     Genders: Genders,
     Locations: Locations,
-    TagsRegex: TagsRegex,
-    TAGS_MAX_LENGTH: TAGS_MAX_LENGTH
+    TagsRegex: TagsRegex
 }
