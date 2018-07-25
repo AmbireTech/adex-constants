@@ -73,11 +73,9 @@ const Genders = [
     { value: 'other', label: 'LABEL_GENDER_OTHER' }
 ]
 
-const PredefinedTags = [
-    { name: 'sports'},
-    { name: 'tech'},
-    { name: 'outdoors'}
-]
+const TagsRegex = new RegExp(/^[A-Za-z0-9 ]*[A-Za-z0-9][A-Za-z0-9 ]*$/g)
+
+const TAGS_MAX_LENGTH = 30;
 
 let allCountries = countryData.countries.all.map((cnt) => {
     return {
@@ -113,5 +111,6 @@ module.exports = {
     DefaultTargets: DefaultTargets,
     Genders: Genders,
     Locations: Locations,
-    PredefinedTags: PredefinedTags
+    TagsRegex: TagsRegex,
+    TAGS_MAX_LENGTH: TAGS_MAX_LENGTH
 }
