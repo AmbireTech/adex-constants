@@ -73,9 +73,8 @@ const Genders = [
     { value: 'other', label: 'LABEL_GENDER_OTHER' }
 ]
 
-const TagsRegex = new RegExp(/^[A-Za-z0-9 ]*[A-Za-z0-9][A-Za-z0-9 ]*$/g)
+const TagsRegex = new RegExp(/^[A-Za-z0-9 ]{2,30}$/g)
 
-const TAGS_MAX_LENGTH = 30;
 
 let allCountries = countryData.countries.all.map((cnt) => {
     return {
@@ -108,7 +107,6 @@ module.exports = {
     TargetWeightLabels: TargetWeightLabels,
     TARGET_MIN_AGE: TARGET_MIN_AGE,
     TARGET_MAX_AGE: TARGET_MAX_AGE,
-    TAGS_MAX_LENGTH: TAGS_MAX_LENGTH,
     DefaultTargets: DefaultTargets,
     Genders: Genders,
     Locations: Locations,
