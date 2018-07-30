@@ -73,7 +73,7 @@ const Genders = [
     { value: 'other', label: 'LABEL_GENDER_OTHER' }
 ]
 
-const ACInputRegex = new RegExp(/^[A-Za-z0-9 ]{2,30}$/g)
+const ACInputRegex = new RegExp(/^[A-Za-z0-9 ]{2,50}$/g)
 
 
 let allCountries = countryData.countries.all.map((cnt) => {
