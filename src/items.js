@@ -73,7 +73,7 @@ const Genders = [
     { value: 'other', label: 'LABEL_GENDER_OTHER' }
 ]
 
-const ACInputRegex = new RegExp(/^[A-Za-z0-9 ]{2,50}$/g)
+const ACTagsRegex = new RegExp(/^[A-Za-z0-9 ]{2,50}$/g)
 
 
 let allCountries = countryData.countries.all.map((cnt) => {
@@ -110,5 +110,5 @@ module.exports = {
     DefaultTargets: DefaultTargets,
     Genders: Genders,
     Locations: Locations,
-    ACInputRegex: ACInputRegex
+    ACTagsRegex: ACTagsRegex
 }
