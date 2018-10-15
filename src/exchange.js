@@ -47,7 +47,8 @@ const timeoutsByValue = mapArrayByProp(TIMEOUTS, 'value')
 const SIGN_TYPES = {
     Eip: { id: 0, value: 'Eip', label: 'SIGN_TYPES_EIP' },
     EthPersonal: { id: 1, value: 'EthPersonal', label: 'SIGN_TYPES_ETH_PERSONAL' }, // Geth mode (Ledger)
-    Trezor: { id: 2, value: 'Trezor', label: 'SIGN_TYPES_TREZOR' }
+    Trezor: { id: 2, value: 'Trezor', label: 'SIGN_TYPES_TREZOR' },
+    Guest: { id: 3, value: 'Guest', label: 'SIGN_TYPES_GUEST'}
 }
 
 const SignTypesValues = objPropsById(SIGN_TYPES, 'value')
